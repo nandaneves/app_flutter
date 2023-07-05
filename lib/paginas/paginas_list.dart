@@ -1,26 +1,111 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
-class Pagina_lista extends StatelessWidget {
+final TextEditingController email_controle = TextEditingController();
+
+class Pagina_Lista extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: TextField(
-            decoration: InputDecoration(
-                labelText: 'email',
-                hintText: 'exemplo@exemplo.com',
-                border: OutlineInputBorder(),
-                prefixText: "R\$",
-                suffixText: "Olá, mundo"),
-            obscureText: true,
-            obscuringCharacter: 'F',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-              color: Colors.blueAccent,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: "Adicione uma tarefa",
+                        hintText: "Digite aqui"),
+                  ),
+                ),
+                SizedBox(width: 7),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 0, 192, 250),
+                  ),
+                  child: Icon(
+                    Icons.add,
+                    size: 30,
+                  ),
+                ),
+              ],
             ),
-          ),
+            SizedBox(
+              height: 15,
+            ),
+            ListView(
+              shrinkWrap: true,
+              children: [
+                ListTile(
+                  title: Text("matemática é legal"),
+                  subtitle: Text("Você concorda ?"),
+                  leading: Icon(
+                    Icons.question_mark,
+                    size: 30,
+                  ),
+                  onTap: () {
+                    print("pergunta 1");
+                  },
+                ),
+                ListTile(
+                  title: Text(" inglês é legal"),
+                  subtitle: Text("Você concorda ?"),
+                  leading: Icon(
+                    Icons.question_mark,
+                    size: 30,
+                  ),
+                ),
+                ListTile(
+                  title: Text(" física é legal"),
+                  subtitle: Text("Você concorda ?"),
+                  leading: Icon(
+                    Icons.question_mark,
+                    size: 30,
+                  ),
+                ),
+                ListTile(
+                  title: Text(" filosofia é legal"),
+                  subtitle: Text("Você concorda ?"),
+                  leading: Icon(
+                    Icons.question_mark,
+                    size: 30,
+                  ),
+                ),
+                ListTile(
+                  title: Text(" portguês é legal"),
+                  subtitle: Text("Você concorda ?"),
+                  leading: Icon(
+                    Icons.question_mark,
+                    size: 30,
+                  ),
+                ),
+              ],
+            ),
+            /* Text("Mestre Jedi Dieimes Nunes"),
+            ElevatedButton(onPressed: () {}, child: Text("Clique aqui"),),*/
+            Row(
+              children: [
+                Expanded(
+                    child: TextField(
+                  decoration: InputDecoration(
+                    labelText: "Você possui 0 tarefas pendentes",
+                  ),
+                )),
+                SizedBox(width: 7),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    primary: Color.fromARGB(255, 0, 192, 250),
+                  ),
+                  child: Text("Limpar"),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
