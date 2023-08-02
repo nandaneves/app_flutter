@@ -8,7 +8,7 @@ void main() {
 class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Pagina_Lista(),
+      home: Pagina_lista(),
     );
   }
 }
